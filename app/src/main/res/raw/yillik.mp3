@@ -1,0 +1,42 @@
+  <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Elektr', 'Gaz', 'Issiq_suv', 'Sovuq_suv'],
+          ['Yanvar',  100,      45,      60,      44],
+          ['Fevral',  50,      43,      60,      48],
+          ['Mart',  66,       32,      45,      53],
+          ['Aprel',  60,      25,      40,      60],
+          ['May',  75,      18,      40,      62],
+          ['Iyun',  90,      20,      62,      50],
+          ['Iyul',  100,      18,      65,      52],
+          ['Avgust',  110,      17,      70,      54],
+          ['Sentabr',  75,      18,      55,      55],
+          ['Oktabr',  75,      20,      50,      52],
+          ['Noyabr',  80,      25,      45,      42],
+          ['Dekabr',  117,      46,      65,      46],
+
+
+        ]);
+
+        var options = {
+          title: '',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>
